@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Brent Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Método de Brent - Calculadora Interactiva</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="function-input">Función f(x):</label>
+                <input type="text" id="function-input" value="x^3 - 13*x^2 + 20*x + 100" placeholder="Ejemplo: x^2 - 4">
+                <small>Usa sintaxis JavaScript válida (ej. Math.sin(x), x**2, etc.)</small>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="lower-bound">Límite inferior (a):</label>
+                    <input type="number" id="lower-bound" value="0" step="any">
+                </div>
+                
+                <div class="input-group">
+                    <label for="upper-bound">Límite superior (b):</label>
+                    <input type="number" id="upper-bound" value="8" step="any">
+                </div>
+            </div>
+            
+            <div class="advanced-options">
+                <h3>Opciones avanzadas</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="xtol">Tolerancia en x:</label>
+                        <input type="number" id="xtol" value="1e-10" step="1e-20">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="ytol">Tolerancia en y:</label>
+                        <input type="number" id="ytol" value="1e-8" step="1e-20">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="max-iter">Máx. iteraciones:</label>
+                        <input type="number" id="max-iter" value="100" min="1">
+                    </div>
+                </div>
+            </div>
+            
+            <button id="calculate-btn">Calcular Raíz</button>
+        </div>
+        
+        <div id="results" class="results-section">
+            <h2>Resultados</h2>
+            <div id="output" class="output-box">
+                <p>Ingresa una función y los parámetros, luego haz clic en "Calcular Raíz"</p>
+            </div>
+            
+            <div id="plot-container" class="plot-container">
+                <!-- Aquí se mostrará el gráfico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
